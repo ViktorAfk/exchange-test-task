@@ -19,7 +19,8 @@ const actionValue = chooseAction === 'sell' ? 'You will earn' : 'You will spent'
 
 const buyMessage = `Congratulatons! You have bought ${currentValue}ETH`;
 const sellMessage = `Congratulatons! You have earned ${totalEmount}$`;
-const notEnoughMessage = 'Sorry, you don\'t have enough money. Recharge your balnce please.'
+const notEnoughMessage = 'Sorry, you don\'t have enough money. Recharge your balance please.'
+const notEnoughEthMessage = 'Sorry, you don\'t have enough ETH. Recharge your balance please.'
 
 const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
   const { value } = event.target;
@@ -33,6 +34,12 @@ const handleSubmit = (event:React.FormEvent<HTMLFormElement>) => {
   event.preventDefault();
   if (currentValue === 0) {
     return;
+  }
+
+  if (chooseAction === 'sell' && ethAmount < currentValue) {
+    setModalMessage(notEnoughEthMessage);
+    setHistory(currentHistory => [...currentHistory, notEnoughEthMessage]);
+    setModal(true);
   }
 
   if (totalEmount > usdtAmount) {

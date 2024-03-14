@@ -106,11 +106,11 @@ body {
 }
 
 .dialog {
-  padding-block: 20px;
+  padding-block: 10px;
   padding-bottom: 10px;
   align-self: center;
   width: 200px;
-  height: 100px;
+  height: 150px;
   border: none;
   border-radius: 10px;
 }
