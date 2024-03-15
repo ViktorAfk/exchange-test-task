@@ -42,7 +42,7 @@ const handleSubmit = (event:React.FormEvent<HTMLFormElement>) => {
     setModal(true);
   }
 
-  if (totalEmount > usdtAmount) {
+  if (chooseAction === 'buy' && totalEmount > usdtAmount) {
     setModalMessage(() => notEnoughMessage);
     setHistory(currentHistory => [...currentHistory, notEnoughMessage])
     setModal(true);
