@@ -17,8 +17,8 @@ const [history, setHistory] = useState<string[]>([])
 const totalEmount = Math.round((currentCurency * currentValue) * 100) / 100;
 const actionValue = chooseAction === 'sell' ? 'You will earn' : 'You will spent';
 
-const buyMessage = `Congratulatons! You have bought ${currentValue}ETH`;
-const sellMessage = `Congratulatons! You have earned ${totalEmount}$`;
+const buyMessage = `Congratulations! You have bought ${currentValue}ETH`;
+const sellMessage = `Congratulations! You have earned ${totalEmount}$`;
 const notEnoughMessage = 'Sorry, you don\'t have enough money. Recharge your balance please.'
 const notEnoughEthMessage = 'Sorry, you don\'t have enough ETH. Recharge your balance please.'
 
@@ -75,7 +75,7 @@ const handleSubmit = (event:React.FormEvent<HTMLFormElement>) => {
 
         <div className="currency-line">
           <div className="currency-image">
-            <img className="image-eth" src="/ETH.png" alt="ETH image"/>
+            <img className="image-eth" src="./ETH.png" alt="ETH image"/>
           </div>
 
           <p className="currency-info">{currentCurency === 0 ? 'loading...' : currentCurency}</p>
